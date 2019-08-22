@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choice.qrcodedishcheck.business.settingcheck.dao.BohDao">
+
+
+    <resultMap id="bohSysConf" type="com.zjf.qrcodedishcheck.business.boh.entity.BohSysConfig">
+        <result property="grptyp" column="grptyp" jdbcType="VARCHAR"/>
+        <result property="typ" column="typ" jdbcType="VARCHAR"/>
+        <result property="des" column="des" jdbcType="VARCHAR"/>
+        <result property="vl" column="vl" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="queryRedisConfig" resultMap="bohSysConf">
+         select grptyp,typ,des,vl from sysconfig where typ = 'redis'
+    </select>
+
+
+</mapper>
